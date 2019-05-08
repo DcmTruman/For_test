@@ -13,7 +13,7 @@ before_install:
 
 
 script:
-  - bash./task/task1.sh --file=./images -p "test1"
+  - bash ./task/task1.sh --file=./images -p "test1"
   - ls -l ./images/
   - bash ./task/task1.sh -f ./images/0657cda644f08b4.jpg -q 50 -s "test2"
   - ls -l ./images/

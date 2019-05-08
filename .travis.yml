@@ -9,12 +9,12 @@ before_install:
     - tar --xz -xvf shellcheck-"${scversion}".linux.x86_64.tar.xz
     - sudo cp shellcheck-"${scversion}"/shellcheck /usr/bin/
     - /usr/bin/shellcheck --version
-    - sudo apt-get install ghostscript
+    - sudo apt-get install ghostscript -y
     - sudo apt-get install imagemagick -y
 
 
 script:
-  - bash ./task/task1.sh --file=./images -p "test1"
+  - bash ./task/task1.sh --file=./images/ -p "test1"
   - ls -l ./images/
   - bash ./task/task1.sh -f ./images/0657cda644f08b4.jpg -q 50 -s "test2"
   - ls -l ./images/

@@ -24,6 +24,7 @@ script:
   - ls -l ./images/
   - bash ./task/task1.sh -f ./images/ -m "DcmTruman" -p "test5"
   - ls -l ./images/
+  - bash ./task/task2.sh
 
 after_script:
   - /usr/bin/shellcheck ./task/task1.sh

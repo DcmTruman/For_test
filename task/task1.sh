@@ -84,7 +84,7 @@ function check_type(){
 }
 function calc_intersect(){
 	tmp_arr=("$@")
-	mapfile TYPE_ARR <"$(comm -12 <(for X in "${tmp_arr[@]}"; do echo "${X}"; done|sort)  <(for X in "${TYPE_ARR[@]}"; do echo "${X}"; done|sort))"
+	mapfile TYPE_ARR <$(comm -12 <(for X in "${tmp_arr[@]}"; do echo "${X}"; done|sort)  <(for X in "${TYPE_ARR[@]}"; do echo "${X}"; done|sort))
 }
 function check_size(){
 	tmp_size=$1

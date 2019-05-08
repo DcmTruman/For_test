@@ -9,12 +9,24 @@ before_install:
     - tar --xz -xvf shellcheck-"${scversion}".linux.x86_64.tar.xz
     - sudo cp shellcheck-"${scversion}"/shellcheck /usr/bin/
     - /usr/bin/shellcheck --version
+    - sudo apt-get install imagemagick -y
+
 
 script:
-  - bash test.sh
+  - bash./task/task1.sh --file=./images -p "test1"
+  - ls -l ./images/
+  - bash ./task/task1.sh -f ./images/0657cda644f08b4.jpg -q 50 -s "test2"
+  - ls -l ./images/
+  - bash ./task/task1.sh -f ./images/Octicons-cloud-download.svg -c -p "test3"
+  - ls -l ./images/
+  - bash ./task/task1.sh -f ./images/ -r 50 -s "test4"
+  - ls -l ./images/
+  - bash ./task/task1.sh -f ./images/ -m "DcmTruman" -p "test5"
+  - ls -l ./images/
 
 after_script:
   - /usr/bin/shellcheck test.sh
+  - /usr/bin/shellcheck ./task/task1.sh
 
 after_failure:
   - id

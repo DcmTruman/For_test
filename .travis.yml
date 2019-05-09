@@ -11,6 +11,7 @@ before_install:
     - /usr/bin/shellcheck --version
     - sudo apt-get install ghostscript -y
     - sudo apt-get install imagemagick -y
+    - sudo apt-get install p7zip-full -y
     - 7z x ./data/web_log.tsv.7z -o./data/
 
 script:

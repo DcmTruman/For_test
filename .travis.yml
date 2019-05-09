@@ -11,7 +11,7 @@ before_install:
     - /usr/bin/shellcheck --version
     - sudo apt-get install ghostscript -y
     - sudo apt-get install imagemagick -y
-
+    - 7z x ./data/web_log.tsv.7z -o./data/
 
 script:
   - bash ./task/task1.sh --file=./images/ -p "test1"
@@ -25,9 +25,13 @@ script:
   - bash ./task/task1.sh -f ./images/ -m "DcmTruman" -p "test5"
   - ls -l ./images/
   - bash ./task/task2.sh
+  - bash ./task/task3.sh
+  - bash ./task/task3.sh /images/ksclogo-medium.gif
 
 after_script:
   - /usr/bin/shellcheck ./task/task1.sh
+  - /usr/bin/shellcheck ./task/task2.sh
+  - /usr/bin/shellcheck ./task/task3.sh
 
 after_failure:
   - id
